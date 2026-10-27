@@ -165,6 +165,8 @@
     }
 
     function frame() {
+      // a hidden or zero-size window has nothing to draw (drawImage would throw)
+      if (!board.width || !board.height) { rafId = requestAnimationFrame(frame); return; }
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(board, 0, 0);
@@ -208,6 +210,7 @@
     }
 
     function drawStatic() {
+      if (!board.width || !board.height) return;
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(board, 0, 0);
@@ -385,18 +388,95 @@
     });
   }
 
+  /* ---------------- Editable content (Google Sheet "Content" tab) ---------------- */
+  var CMS_STORE = "ctl-cms-content";
+
+  // Text with *stars* shows the starred part in gold; newlines are kept
+  function renderText(el, text) {
+    el.textContent = "";
+    text.split("*").forEach(function (part, i) {
+      if (!part) return;
+      if (i % 2 === 1) {
+        var span = document.createElement("span");
+        span.className = "text-gold";
+        span.textContent = part;
+        el.appendChild(span);
+      } else {
+        el.appendChild(document.createTextNode(part));
+      }
+    });
+    el.style.whiteSpace = "pre-line";
+  }
+
+  function setMeta(name, value) {
+    if (!value) return;
+    var m = document.querySelector('meta[name="' + name + '"]');
+    if (!m) {
+      m = document.createElement("meta");
+      m.setAttribute("name", name);
+      document.head.appendChild(m);
+    }
+    m.setAttribute("content", value);
+  }
+
+  function initials(name) {
+    return name.trim().split(/\s+/).slice(0, 2).map(function (w) { return w.charAt(0); }).join("").toUpperCase();
+  }
+
+  function applyContent(c) {
+    var page = document.body.getAttribute("data-page");
+    if (page && c["meta." + page + ".title"]) document.title = c["meta." + page + ".title"];
+    if (page) setMeta("description", c["meta." + page + ".description"]);
+    setMeta("keywords", c["meta.keywords"]);
+
+    // A single "-" hides the item; decide after all fields so order doesn't matter
+    var hide = [];
+    document.querySelectorAll("[data-cms], [data-cms-block]").forEach(function (el) { el.hidden = false; });
+    document.querySelectorAll("[data-cms]").forEach(function (el) {
+      var v = c[el.getAttribute("data-cms")];
+      if (v == null || v === "") return; // empty cell keeps the built-in text
+      if (v.trim() === "-") { hide.push(el.closest("[data-cms-block]") || el); return; }
+      renderText(el, v);
+    });
+    hide.forEach(function (el) { el.hidden = true; });
+    document.querySelectorAll("[data-cms-initials]").forEach(function (el) {
+      var name = c[el.getAttribute("data-cms-initials")];
+      if (name && name.trim() !== "-") el.textContent = initials(name);
+    });
+  }
+
+  function initCms() {
+    if (!SHEET_URL) return;
+    // Show the last known content straight away, then refresh from the sheet
+    try {
+      var saved = JSON.parse(localStorage.getItem(CMS_STORE));
+      if (saved) applyContent(saved);
+    } catch (e) { /* storage unavailable */ }
+
+    fetch(SHEET_URL + "?action=content")
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (!res || !res.content) return;
+        applyContent(res.content);
+        try { localStorage.setItem(CMS_STORE, JSON.stringify(res.content)); } catch (e) { /* ignore */ }
+      })
+      .catch(function () { /* keep built-in text */ });
+  }
+
   /* ---------------- Footer year ---------------- */
   function initYear() {
     document.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    initPcb();
+    // the background is decoration: never let it stop the rest of the page
+    try { initPcb(); } catch (e) { /* ignore */ }
     initNav();
     initReveal();
     initCounters();
     initFilters();
     initContact();
+    initCms();
     initYear();
   });
 })();

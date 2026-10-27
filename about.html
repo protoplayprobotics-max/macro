@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="inner">
+<body class="inner" data-page="about">
   <canvas id="pcb-bg" aria-hidden="true"></canvas>
 
   <header class="site-header">
@@ -37,8 +37,8 @@
       <div class="container reveal">
         <div class="breadcrumb"><a href="index.html">home</a> / about</div>
         <span class="section-tag">About Us</span>
-        <h1>Engineers Who Think in <span class="text-gold">Copper &amp; Code</span></h1>
-        <p class="lead">CopperTrace Labs is an electronics design house focused on PCB design, embedded systems and IoT. We help startups, OEMs and researchers turn ideas into reliable, manufacturable hardware.</p>
+        <h1 data-cms="about.hero.title">Engineers Who Think in <span class="text-gold">Copper &amp; Code</span></h1>
+        <p class="lead" data-cms="about.hero.lead">CopperTrace Labs is an electronics design house focused on PCB design, embedded systems and IoT. We help startups, OEMs and researchers turn ideas into reliable, manufacturable hardware.</p>
       </div>
     </section>
 
@@ -68,10 +68,10 @@
         </div>
         <div class="reveal d2">
           <span class="section-tag">Our Story</span>
-          <h2>Started on a <span class="text-gold">Workbench</span></h2>
-          <p>We began as a small group of electronics engineers who loved solving tricky hardware problems — noisy power rails, RF that wouldn't connect, batteries that died too soon.</p>
-          <p>Today we run a full design lab with schematic and layout, firmware development, SMT prototyping and test benches under one roof. We've delivered boards for agriculture, energy, industrial automation, healthcare and consumer products.</p>
-          <p>What hasn't changed: we care about every trace, every via, and every line of firmware that goes into your product.</p>
+          <h2 data-cms="about.story.title">Started on a <span class="text-gold">Workbench</span></h2>
+          <p data-cms="about.story.p1">We began as a small group of electronics engineers who loved solving tricky hardware problems — noisy power rails, RF that wouldn't connect, batteries that died too soon.</p>
+          <p data-cms="about.story.p2">Today we run a full design lab with schematic and layout, firmware development, SMT prototyping and test benches under one roof. We've delivered boards for agriculture, energy, industrial automation, healthcare and consumer products.</p>
+          <p data-cms="about.story.p3">What hasn't changed: we care about every trace, every via, and every line of firmware that goes into your product.</p>
         </div>
       </div>
     </section>
@@ -87,21 +87,21 @@
           <article class="card reveal">
             <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></div>
             <h3>Our Mission</h3>
-            <p>To make professional-grade electronics design accessible to every innovator — from first-time founders to established manufacturers.</p>
+            <p data-cms="about.mission">To make professional-grade electronics design accessible to every innovator — from first-time founders to established manufacturers.</p>
           </article>
           <article class="card reveal d1">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
             <h3>Our Vision</h3>
-            <p>To be a trusted R&amp;D partner for smart, connected and energy-efficient products made in India for the world.</p>
+            <p data-cms="about.vision">To be a trusted R&amp;D partner for smart, connected and energy-efficient products made in India for the world.</p>
           </article>
           <article class="card reveal d2">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></div>
             <h3>Our Values</h3>
             <ul class="ticks">
-              <li>Quality over shortcuts</li>
-              <li>Transparent communication</li>
-              <li>Respect for client IP</li>
-              <li>Continuous learning</li>
+              <li data-cms="about.values.1">Quality over shortcuts</li>
+              <li data-cms="about.values.2">Transparent communication</li>
+              <li data-cms="about.values.3">Respect for client IP</li>
+              <li data-cms="about.values.4">Continuous learning</li>
             </ul>
           </article>
         </div>
@@ -113,15 +113,15 @@
       <div class="container split" style="align-items:start">
         <div class="reveal">
           <span class="section-tag">Milestones</span>
-          <h2>Our <span class="text-gold">Journey</span></h2>
-          <p class="lead">Every year brought new tools, new capabilities and new challenges solved.</p>
+          <h2 data-cms="about.journey.title">Our <span class="text-gold">Journey</span></h2>
+          <p class="lead" data-cms="about.journey.lead">Every year brought new tools, new capabilities and new challenges solved.</p>
         </div>
         <div class="timeline reveal d2">
-          <div class="tl-item"><div class="year">2016</div><h3>The First Board</h3><p>Founded as a PCB layout service for local startups.</p></div>
-          <div class="tl-item"><div class="year">2018</div><h3>Embedded Team</h3><p>Added firmware development for STM32 &amp; AVR platforms.</p></div>
-          <div class="tl-item"><div class="year">2020</div><h3>IoT Division</h3><p>Launched connected-device design with Wi-Fi, BLE and LoRa.</p></div>
-          <div class="tl-item"><div class="year">2023</div><h3>In-house Prototyping Lab</h3><p>Set up SMT rework, reflow and test benches for rapid prototypes.</p></div>
-          <div class="tl-item"><div class="year">2026</div><h3>Own Product Line</h3><p>Began field trials of our own IoT products for water, energy and agriculture.</p></div>
+          <div class="tl-item" data-cms-block><div class="year" data-cms="about.timeline.1.year">2016</div><h3 data-cms="about.timeline.1.title">The First Board</h3><p data-cms="about.timeline.1.text">Founded as a PCB layout service for local startups.</p></div>
+          <div class="tl-item" data-cms-block><div class="year" data-cms="about.timeline.2.year">2018</div><h3 data-cms="about.timeline.2.title">Embedded Team</h3><p data-cms="about.timeline.2.text">Added firmware development for STM32 &amp; AVR platforms.</p></div>
+          <div class="tl-item" data-cms-block><div class="year" data-cms="about.timeline.3.year">2020</div><h3 data-cms="about.timeline.3.title">IoT Division</h3><p data-cms="about.timeline.3.text">Launched connected-device design with Wi-Fi, BLE and LoRa.</p></div>
+          <div class="tl-item" data-cms-block><div class="year" data-cms="about.timeline.4.year">2023</div><h3 data-cms="about.timeline.4.title">In-house Prototyping Lab</h3><p data-cms="about.timeline.4.text">Set up SMT rework, reflow and test benches for rapid prototypes.</p></div>
+          <div class="tl-item" data-cms-block><div class="year" data-cms="about.timeline.5.year">2026</div><h3 data-cms="about.timeline.5.title">Own Product Line</h3><p data-cms="about.timeline.5.text">Began field trials of our own IoT products for water, energy and agriculture.</p></div>
         </div>
       </div>
     </section>
@@ -131,14 +131,14 @@
       <div class="container">
         <div class="center reveal">
           <span class="section-tag">The Team</span>
-          <h2>People Behind the <span class="text-gold">Boards</span></h2>
-          <p class="lead">A compact team of specialists across hardware, firmware and cloud.</p>
+          <h2 data-cms="about.team.title">People Behind the <span class="text-gold">Boards</span></h2>
+          <p class="lead" data-cms="about.team.lead">A compact team of specialists across hardware, firmware and cloud.</p>
         </div>
         <div class="grid grid-4" style="margin-top:48px">
-          <article class="card member reveal"><div class="avatar">FN</div><h3>Founder Name</h3><div class="role">Founder &amp; Lead Hardware</div><p>15+ years in PCB design and power electronics.</p></article>
-          <article class="card member reveal d1"><div class="avatar">FW</div><h3>Firmware Lead</h3><div class="role">Embedded Systems</div><p>RTOS, low-power design and bootloaders.</p></article>
-          <article class="card member reveal d2"><div class="avatar">RF</div><h3>RF Engineer</h3><div class="role">Wireless &amp; Antennas</div><p>BLE, Wi-Fi, LoRa and antenna matching.</p></article>
-          <article class="card member reveal d3"><div class="avatar">IO</div><h3>IoT Developer</h3><div class="role">Cloud &amp; Apps</div><p>MQTT, dashboards and mobile app integration.</p></article>
+          <article class="card member reveal" data-cms-block><div class="avatar" data-cms-initials="about.team.1.name">FN</div><h3 data-cms="about.team.1.name">Founder Name</h3><div class="role" data-cms="about.team.1.role">Founder &amp; Lead Hardware</div><p data-cms="about.team.1.bio">15+ years in PCB design and power electronics.</p></article>
+          <article class="card member reveal d1" data-cms-block><div class="avatar" data-cms-initials="about.team.2.name">FW</div><h3 data-cms="about.team.2.name">Firmware Lead</h3><div class="role" data-cms="about.team.2.role">Embedded Systems</div><p data-cms="about.team.2.bio">RTOS, low-power design and bootloaders.</p></article>
+          <article class="card member reveal d2" data-cms-block><div class="avatar" data-cms-initials="about.team.3.name">RF</div><h3 data-cms="about.team.3.name">RF Engineer</h3><div class="role" data-cms="about.team.3.role">Wireless &amp; Antennas</div><p data-cms="about.team.3.bio">BLE, Wi-Fi, LoRa and antenna matching.</p></article>
+          <article class="card member reveal d3" data-cms-block><div class="avatar" data-cms-initials="about.team.4.name">IO</div><h3 data-cms="about.team.4.name">IoT Developer</h3><div class="role" data-cms="about.team.4.role">Cloud &amp; Apps</div><p data-cms="about.team.4.bio">MQTT, dashboards and mobile app integration.</p></article>
         </div>
       </div>
     </section>
