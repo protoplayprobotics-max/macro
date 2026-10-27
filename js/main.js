@@ -10,7 +10,7 @@
 
   var CONTACT_EMAIL = "info@coppertracelabs.com"; // TODO: replace with your real email
   // Google Apps Script web app URL (see google-sheet/SETUP.md). Empty = fall back to email.
-  var SHEET_URL = "";
+  var SHEET_URL = "https://script.google.com/macros/s/AKfycbxK4ubXoKoSwNO4j-nzf3OHwqW2Y-sbEVl_fma3bLW-7mJJb7UNzbFMT9EanWvyYBFO/exec";
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
