@@ -26,7 +26,7 @@ function doPost(e) {
       new Date(),
       clean(p.name),
       clean(p.email),
-      clean(p.phone),
+      asText(p.phone),
       clean(p.company),
       clean(p.service),
       clean(p.message),
@@ -70,6 +70,12 @@ function getSheet() {
 function clean(v) {
   v = String(v || "").trim().slice(0, 5000);
   return /^[=+\-@]/.test(v) ? "'" + v : v;
+}
+
+// Keep values like phone numbers as text so Sheets doesn't drop leading zeros
+function asText(v) {
+  v = clean(v);
+  return v && v.charAt(0) !== "'" ? "'" + v : v;
 }
 
 function json(obj) {
