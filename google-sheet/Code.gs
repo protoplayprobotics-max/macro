@@ -77,7 +77,13 @@ var CONTENT_DEFAULTS = [
   ["about.team.3.bio", "BLE, Wi-Fi, LoRa and antenna matching.", "Team member 3: short bio"],
   ["about.team.4.name", "IoT Developer", "Team member 4: name (- to hide)"],
   ["about.team.4.role", "Cloud & Apps", "Team member 4: role"],
-  ["about.team.4.bio", "MQTT, dashboards and mobile app integration.", "Team member 4: short bio"]
+  ["about.team.4.bio", "MQTT, dashboards and mobile app integration.", "Team member 4: short bio"],
+
+  ["contact.address", "Plot No. 00, Electronics City,\nYour City, State – 000000, India", "Lab address on Contact Us + home page (Ctrl+Enter for a new line)"],
+  ["contact.email", "info@coppertracelabs.com", "Email: Contact Us, home page and every footer (also the email link)"],
+  ["contact.phone", "+91 00000 00000", "Phone: Contact Us, home page and every footer (also the call link; - to hide)"],
+  ["contact.hours", "Mon – Sat, 9:30 AM – 6:30 PM", "Working hours on Contact Us + home page (- to hide)"],
+  ["contact.city", "Your City, India", "Location under Reach Us in every footer (- to hide)"]
 ];
 
 function doPost(e) {
@@ -145,7 +151,10 @@ function getContent() {
 function getContentSheet() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = ss.getSheetByName(CONTENT_SHEET);
-  if (sheet) return sheet;
+  if (sheet) {
+    addMissingRows(sheet);
+    return sheet;
+  }
 
   sheet = ss.insertSheet(CONTENT_SHEET);
   var header = [["Key (do not change)", "Value (edit this)", "What it is"]];
@@ -159,6 +168,22 @@ function getContentSheet() {
   sheet.setColumnWidth(3, 300);
   sheet.setFrozenRows(1);
   return sheet;
+}
+
+// When the script gains new editable items, add them to an existing Content tab
+// (at the bottom) without touching the rows you've already edited
+function addMissingRows(sheet) {
+  var last = sheet.getLastRow();
+  var have = {};
+  if (last > 1) {
+    sheet.getRange(2, 1, last - 1, 1).getValues().forEach(function (r) { have[String(r[0]).trim()] = true; });
+  }
+  var missing = CONTENT_DEFAULTS.filter(function (r) { return !have[r[0]]; });
+  if (!missing.length) return;
+  var start = Math.max(last, 1) + 1;
+  sheet.getRange(start, 1, missing.length, 3).setValues(missing);
+  sheet.getRange(start, 2, missing.length, 1).setNumberFormat("@").setWrap(true);
+  sheet.getRange(start, 1, missing.length, 1).setFontColor("#888888");
 }
 
 // Runs automatically when you edit the sheet, so content changes show up quickly

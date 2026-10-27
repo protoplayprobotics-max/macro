@@ -437,7 +437,12 @@
       if (v == null || v === "") return; // empty cell keeps the built-in text
       if (v.trim() === "-") { hide.push(el.closest("[data-cms-block]") || el); return; }
       renderText(el, v);
+      // keep mailto:/tel: links in step with the text shown
+      var link = el.getAttribute("data-cms-link");
+      if (link === "mailto") el.setAttribute("href", "mailto:" + v.trim());
+      if (link === "tel") el.setAttribute("href", "tel:" + v.replace(/[^\d+]/g, ""));
     });
+    if (c["contact.email"] && c["contact.email"].trim() !== "-") CONTACT_EMAIL = c["contact.email"].trim();
     hide.forEach(function (el) { el.hidden = true; });
     document.querySelectorAll("[data-cms-initials]").forEach(function (el) {
       var name = c[el.getAttribute("data-cms-initials")];
