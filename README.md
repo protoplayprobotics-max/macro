@@ -11,7 +11,7 @@ Multipage static site (HTML / CSS / JS, no build step) for a PCB design, electro
 ## Customise
 - **Company name**: search & replace `CopperTrace` / `Copper<em>Trace</em> Labs` across the HTML files.
 - **Contact details**: replace the placeholder address, phone and `info@coppertracelabs.com` in every page footer and the contact section of `index.html`.
-- **Contact form email**: set `CONTACT_EMAIL` at the top of `js/main.js` (the form opens the visitor's email app).
+- **Contact form → Google Sheet**: follow [`google-sheet/SETUP.md`](google-sheet/SETUP.md), then paste the web app URL into `SHEET_URL` at the top of `js/main.js`. Until it is set, the form falls back to opening the visitor's email app addressed to `CONTACT_EMAIL`.
 - **Colours**: edit the CSS variables at the top of `css/style.css`.
 
 ## Host on GitHub Pages

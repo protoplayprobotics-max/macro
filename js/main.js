@@ -9,6 +9,8 @@
   "use strict";
 
   var CONTACT_EMAIL = "info@coppertracelabs.com"; // TODO: replace with your real email
+  // Google Apps Script web app URL (see google-sheet/SETUP.md). Empty = fall back to email.
+  var SHEET_URL = "";
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -334,17 +336,52 @@
     });
   }
 
-  /* ---------------- Contact form (mailto) ---------------- */
+  /* ---------------- Contact form (Google Sheet, mailto fallback) ---------------- */
   function initContact() {
     var form = document.getElementById("contact-form");
     if (!form) return;
+    var status = form.querySelector(".form-status");
+    var btn = form.querySelector("button[type=submit]");
+    var btnText = btn ? btn.textContent : "";
+
+    function setStatus(msg, type) {
+      if (!status) return;
+      status.textContent = msg;
+      status.className = "form-status" + (type ? " " + type : "");
+    }
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var v = function (n) { return (form.elements[n] && form.elements[n].value || "").trim(); };
-      var subject = "[Website] " + (v("service") || "Enquiry") + " — " + v("name");
-      var body = "Name: " + v("name") + "\nEmail: " + v("email") + "\nCompany: " + v("company") +
-        "\nService: " + v("service") + "\n\n" + v("message");
-      window.location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+      if (!SHEET_URL) {
+        var subject = "[Website] " + (v("service") || "Enquiry") + " — " + v("name");
+        var body = "Name: " + v("name") + "\nEmail: " + v("email") + "\nPhone: " + v("phone") +
+          "\nCompany: " + v("company") + "\nService: " + v("service") + "\n\n" + v("message");
+        window.location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+        return;
+      }
+
+      var data = new URLSearchParams(new FormData(form));
+      data.append("page", document.title);
+      btn.disabled = true;
+      btn.textContent = "Sending...";
+      setStatus("", "");
+
+      // Apps Script does not send CORS headers, so the response is opaque;
+      // a resolved fetch means the request reached Google.
+      fetch(SHEET_URL, { method: "POST", mode: "no-cors", body: data })
+        .then(function () {
+          form.reset();
+          setStatus("Thank you! Your message has been received. We'll get back to you within one business day.", "ok");
+        })
+        .catch(function () {
+          setStatus("Sorry, something went wrong. Please email us at " + CONTACT_EMAIL + ".", "err");
+        })
+        .then(function () {
+          btn.disabled = false;
+          btn.textContent = btnText;
+        });
     });
   }
 
