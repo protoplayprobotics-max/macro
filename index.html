@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CopperTrace Labs | PCB Design, Embedded &amp; IoT R&amp;D</title>
+  <meta name="description" content="CopperTrace Labs — PCB design, electronics R&D, embedded firmware and IoT product development from concept to prototype.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="pcb-bg" aria-hidden="true"></canvas>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="logo" aria-label="CopperTrace Labs home">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><g stroke="#d9b25a" stroke-width="3" stroke-linecap="round"><path d="M22 6v10M32 6v10M42 6v10M22 48v10M32 48v10M42 48v10M6 22h10M6 32h10M6 42h10M48 22h10M48 32h10M48 42h10"/></g><rect x="16" y="16" width="32" height="32" rx="4" fill="#04140b" stroke="#d9b25a" stroke-width="2.5"/><circle cx="32" cy="32" r="6" fill="#7dffb2"/></svg>
+        <span>Copper<em>Trace</em> Labs</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="rnd.html">R&amp;D</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="#contact" class="btn btn-primary">Get a Quote</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <span class="terminal-line">&gt; design --pcb --firmware --iot<span class="cursor"></span></span>
+          <h1>From <span class="glow">Schematic</span> to <span class="glow">Smart Product</span></h1>
+          <p class="lead">We design multi-layer PCBs, write embedded firmware and build connected IoT devices — taking your idea from a napkin sketch to a working prototype ready for production.</p>
+          <div class="hero-actions">
+            <a href="products.html" class="btn btn-primary">Explore Prototypes
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="rnd.html" class="btn btn-ghost">Our R&amp;D Process</a>
+          </div>
+          <div class="hero-stats">
+            <div><div class="num" data-count="120" data-suffix="+">0</div><div class="lbl">PCBs Designed</div></div>
+            <div><div class="num" data-count="8" data-suffix=" Layers">0</div><div class="lbl">Max Stack-up</div></div>
+            <div><div class="num" data-count="35" data-suffix="+">0</div><div class="lbl">IoT Prototypes</div></div>
+          </div>
+        </div>
+
+        <div class="chip-wrap reveal d2" aria-hidden="true">
+          <svg class="chip-svg" viewBox="0 0 400 400">
+            <defs>
+              <linearGradient id="chipBody" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#1a1f1c"/>
+                <stop offset="1" stop-color="#050807"/>
+              </linearGradient>
+              <radialGradient id="ledGlow">
+                <stop offset="0" stop-color="#7dffb2"/>
+                <stop offset="1" stop-color="#7dffb2" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <!-- static copper traces -->
+            <g fill="none" stroke="#c8823a" stroke-opacity=".75" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <path id="t1" d="M144 90 V50 L114 20 H20"/>
+              <path id="t2" d="M180 90 V14"/>
+              <path id="t3" d="M216 90 V60 L254 22 H380"/>
+              <path id="t4" d="M252 90 V48 H330"/>
+              <path id="t5" d="M144 310 V350 L114 380 H30"/>
+              <path id="t6" d="M198 310 V390"/>
+              <path id="t7" d="M252 310 V340 L292 380 H384"/>
+              <path id="t8" d="M90 144 H50 L20 114"/>
+              <path id="t9" d="M90 198 H10"/>
+              <path id="t10" d="M90 252 H50 L22 280 V330"/>
+              <path id="t11" d="M310 144 H350 L382 112"/>
+              <path id="t12" d="M310 198 H392"/>
+              <path id="t13" d="M310 252 H356 L384 280"/>
+            </g>
+            <!-- end pads -->
+            <g fill="#d9b25a">
+              <circle cx="20" cy="20" r="6"/><circle cx="180" cy="14" r="6"/><circle cx="380" cy="22" r="6"/><circle cx="330" cy="48" r="6"/>
+              <circle cx="30" cy="380" r="6"/><circle cx="198" cy="390" r="6"/><circle cx="384" cy="380" r="6"/>
+              <circle cx="20" cy="114" r="6"/><circle cx="10" cy="198" r="6"/><circle cx="22" cy="330" r="6"/>
+              <circle cx="382" cy="112" r="6"/><circle cx="392" cy="198" r="6"/><circle cx="384" cy="280" r="6"/>
+            </g>
+            <g fill="#04140b"><circle cx="20" cy="20" r="2.4"/><circle cx="380" cy="22" r="2.4"/><circle cx="30" cy="380" r="2.4"/><circle cx="384" cy="380" r="2.4"/><circle cx="10" cy="198" r="2.4"/><circle cx="392" cy="198" r="2.4"/></g>
+            <!-- signal flow overlay -->
+            <g fill="none" stroke="#7dffb2" stroke-width="3.5" stroke-linecap="round" style="filter:drop-shadow(0 0 4px #7dffb2)">
+              <path class="flow" pathLength="200" d="M144 90 V50 L114 20 H20"/>
+              <path class="flow d2" pathLength="200" d="M216 90 V60 L254 22 H380"/>
+              <path class="flow d3" pathLength="200" d="M144 310 V350 L114 380 H30"/>
+              <path class="flow" pathLength="200" d="M252 310 V340 L292 380 H384"/>
+              <path class="flow d2" pathLength="200" d="M90 252 H50 L22 280 V330"/>
+              <path class="flow d3" pathLength="200" d="M310 144 H350 L382 112"/>
+              <path class="flow" pathLength="200" d="M310 198 H392"/>
+              <path class="flow d2" pathLength="200" d="M90 198 H10"/>
+            </g>
+            <!-- pins -->
+            <g stroke="#d9b25a" stroke-width="20" stroke-dasharray="8 10">
+              <line x1="122" y1="100" x2="292" y2="100"/>
+              <line x1="122" y1="300" x2="292" y2="300"/>
+              <line x1="100" y1="122" x2="100" y2="292"/>
+              <line x1="300" y1="122" x2="300" y2="292"/>
+            </g>
+            <!-- package -->
+            <rect x="110" y="110" width="180" height="180" rx="10" fill="url(#chipBody)" stroke="#2c3a31" stroke-width="2"/>
+            <rect x="122" y="122" width="156" height="156" rx="6" fill="none" stroke="#d9b25a" stroke-opacity=".25" stroke-dasharray="4 6"/>
+            <circle cx="130" cy="130" r="5" fill="#3a4a40"/>
+            <circle class="core-led" cx="200" cy="232" r="22" fill="url(#ledGlow)"/>
+            <circle cx="200" cy="232" r="5" fill="#7dffb2"/>
+            <text x="200" y="190" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="24" font-weight="600" fill="#d9b25a">CT-32</text>
+            <text x="200" y="212" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#9bb8a5" letter-spacing="2">ARM · RF · IoT</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section id="services">
+      <div class="container">
+        <div class="center reveal">
+          <span class="section-tag">What We Do</span>
+          <h2>Electronics Engineering, <span class="text-gold">End to End</span></h2>
+          <p class="lead">One team for hardware, firmware and connectivity — so your product works as a whole, not as a pile of parts.</p>
+        </div>
+        <div class="grid grid-4" style="margin-top:48px">
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h4v4H7zM15 7v4h2M7 15h3l2 2h5"/><circle cx="17" cy="7" r="1"/></svg></div>
+            <h3>PCB Design &amp; Layout</h3>
+            <p>Schematic capture, 2–8 layer layout, high-speed &amp; RF routing, DFM/DFT checks and Gerber-ready output.</p>
+          </article>
+          <article class="card reveal d1">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 9l-3 3 3 3M16 9l3 3-3 3M13.5 6l-3 12"/></svg></div>
+            <h3>Embedded Firmware</h3>
+            <p>Bare-metal &amp; RTOS firmware for STM32, ESP32, nRF and AVR — drivers, bootloaders, OTA and low-power tuning.</p>
+          </article>
+          <article class="card reveal d2">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1.2"/><path d="M2 9a14.5 14.5 0 0 1 20 0"/></svg></div>
+            <h3>IoT Solutions</h3>
+            <p>Wi-Fi, BLE, LoRa &amp; GSM connected devices with MQTT cloud dashboards and mobile app integration.</p>
+          </article>
+          <article class="card reveal d3">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 3v6l-5 9a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-9V3M8 3h8M7 15h10"/></svg></div>
+            <h3>Prototyping &amp; Testing</h3>
+            <p>Rapid prototypes, SMT assembly, bring-up, functional testing and pre-compliance checks before production.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="panel" style="padding:56px 0">
+      <div class="container stats">
+        <div class="stat reveal"><div class="num" data-count="10" data-suffix="+">0</div><div class="lbl">Years of Experience</div></div>
+        <div class="stat reveal d1"><div class="num" data-count="60" data-suffix="+">0</div><div class="lbl">Happy Clients</div></div>
+        <div class="stat reveal d2"><div class="num" data-count="120" data-suffix="+">0</div><div class="lbl">Boards Delivered</div></div>
+        <div class="stat reveal d3"><div class="num" data-count="99" data-suffix="%">0</div><div class="lbl">First-Spin Success</div></div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURED PRODUCTS ============ -->
+    <section>
+      <div class="container">
+        <div class="center reveal">
+          <span class="section-tag">From Our Lab</span>
+          <h2>Featured <span class="text-gold">Prototypes</span></h2>
+          <p class="lead">A glimpse of the in-house products we are developing and field-testing.</p>
+        </div>
+        <div class="grid grid-3" style="margin-top:48px">
+          <article class="card product reveal">
+            <div class="product-visual">
+              <span class="status trial">Field Trial</span>
+              <svg viewBox="0 0 64 64"><path d="M20 10h24v44a4 4 0 0 1-4 4H24a4 4 0 0 1-4-4z"/><path d="M20 34c4-3 8 3 12 0s8 3 12 0"/><path d="M26 6h12M32 6v4M48 20h8M48 30h6M48 40h8"/></svg>
+            </div>
+            <div class="product-body">
+              <div class="cat">IoT · Water</div>
+              <h3>AquaSense WLC-1</h3>
+              <p>Smart water-level controller with ultrasonic sensing, automatic pump control and mobile alerts.</p>
+              <a href="products.html">View details &rarr;</a>
+            </div>
+          </article>
+          <article class="card product reveal d1">
+            <div class="product-visual">
+              <span class="status proto">Prototype</span>
+              <svg viewBox="0 0 64 64"><rect x="10" y="8" width="44" height="48" rx="4"/><rect x="16" y="14" width="32" height="14" rx="2"/><path d="M33 34l-6 9h8l-5 9"/></svg>
+            </div>
+            <div class="product-body">
+              <div class="cat">IoT · Energy</div>
+              <h3>VoltWatch EM-1</h3>
+              <p>Wi-Fi energy meter that tracks voltage, current, power factor and kWh with live cloud dashboards.</p>
+              <a href="products.html">View details &rarr;</a>
+            </div>
+          </article>
+          <article class="card product reveal d2">
+            <div class="product-visual">
+              <span class="status proto">Prototype</span>
+              <svg viewBox="0 0 64 64"><circle cx="32" cy="36" r="10"/><path d="M32 6v10M32 46v12M18 22l6 6M40 44l6 6M46 22l-6 6M24 44l-6 6"/><path d="M22 14a14 14 0 0 1 20 0"/></svg>
+            </div>
+            <div class="product-body">
+              <div class="cat">Sensors · LoRa</div>
+              <h3>EnviroNode LR</h3>
+              <p>Solar-powered LoRaWAN node for temperature, humidity and air-quality monitoring over kilometres.</p>
+              <a href="products.html">View details &rarr;</a>
+            </div>
+          </article>
+        </div>
+        <div class="center" style="margin-top:40px">
+          <a href="products.html" class="btn btn-ghost">See All Products</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="panel">
+      <div class="container">
+        <div class="center reveal">
+          <span class="section-tag">How We Work</span>
+          <h2>Idea to <span class="text-gold">Production</span> in Six Steps</h2>
+        </div>
+        <div class="process">
+          <div class="step reveal"><div class="node">01</div><h4>Concept</h4><p>Requirements &amp; feasibility</p></div>
+          <div class="step reveal d1"><div class="node">02</div><h4>Schematic</h4><p>Circuit design &amp; BOM</p></div>
+          <div class="step reveal d2"><div class="node">03</div><h4>PCB Layout</h4><p>Routing, DRC &amp; DFM</p></div>
+          <div class="step reveal d3"><div class="node">04</div><h4>Firmware</h4><p>Drivers, logic &amp; cloud</p></div>
+          <div class="step reveal d2"><div class="node">05</div><h4>Prototype</h4><p>Assembly &amp; bring-up</p></div>
+          <div class="step reveal d3"><div class="node">06</div><h4>Validate</h4><p>Testing &amp; handover</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY US ============ -->
+    <section>
+      <div class="container split">
+        <div class="reveal">
+          <span class="section-tag">Why CopperTrace</span>
+          <h2>Engineered Right the <span class="text-gold">First Time</span></h2>
+          <p>Every board we design goes through design reviews, signal-integrity checks and manufacturability analysis before it reaches the fab — so you spend less on re-spins and get to market faster.</p>
+          <div class="tags">
+            <span class="tag">KiCad</span><span class="tag">Altium</span><span class="tag">STM32</span><span class="tag">ESP32</span>
+            <span class="tag">nRF52</span><span class="tag">FreeRTOS</span><span class="tag">MQTT</span><span class="tag">LoRaWAN</span>
+          </div>
+        </div>
+        <div class="grid grid-2 reveal d2">
+          <div class="card"><h3>NDA First</h3><p>Your IP stays yours. Full source &amp; design files handed over.</p></div>
+          <div class="card"><h3>Fast Turnaround</h3><p>Prototype boards in as little as 2–3 weeks.</p></div>
+          <div class="card"><h3>Low Power</h3><p>Battery devices tuned for months or years of runtime.</p></div>
+          <div class="card"><h3>Scale Ready</h3><p>DFM-checked designs ready for volume manufacturing.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section style="padding-top:0">
+      <div class="container">
+        <div class="cta reveal">
+          <span class="section-tag">Let's Build</span>
+          <h2>Have a Product Idea?</h2>
+          <p class="lead">Tell us what you want to build. We'll get back with a feasibility review and an estimate within 48 hours.</p>
+          <a href="#contact" class="btn btn-primary">Start Your Project</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="panel">
+      <div class="container">
+        <div class="center reveal">
+          <span class="section-tag">Contact</span>
+          <h2>Talk to an <span class="text-gold">Engineer</span></h2>
+          <p class="lead">Share your requirements and we'll respond within one business day.</p>
+        </div>
+        <div class="contact-grid" style="margin-top:48px">
+          <div class="contact-info card reveal">
+            <div class="item">
+              <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+              <div><h4>Lab Address</h4><p>Plot No. 00, Electronics City,<br>Your City, State – 000000, India</p></div>
+            </div>
+            <div class="item">
+              <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+              <div><h4>Email</h4><p><a href="mailto:info@coppertracelabs.com">info@coppertracelabs.com</a></p></div>
+            </div>
+            <div class="item">
+              <div class="icon"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></div>
+              <div><h4>Phone</h4><p><a href="tel:+910000000000">+91 00000 00000</a></p></div>
+            </div>
+            <div class="item">
+              <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+              <div><h4>Working Hours</h4><p>Mon – Sat, 9:30 AM – 6:30 PM</p></div>
+            </div>
+          </div>
+
+          <form id="contact-form" class="card reveal d2">
+            <div class="row">
+              <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required placeholder="Your name"></div>
+              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="you@company.com"></div>
+            </div>
+            <div class="row">
+              <div class="field"><label for="company">Company</label><input id="company" name="company" type="text" placeholder="Optional"></div>
+              <div class="field">
+                <label for="service">Service</label>
+                <select id="service" name="service">
+                  <option>PCB Design &amp; Layout</option>
+                  <option>Embedded Firmware</option>
+                  <option>IoT Product Development</option>
+                  <option>Prototyping &amp; Testing</option>
+                  <option>Product Enquiry</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="field"><label for="message">Project Details</label><textarea id="message" name="message" required placeholder="Tell us about your idea, quantities and timeline..."></textarea></div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <p class="form-note">Opens your email app with the details pre-filled.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom:14px">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><g stroke="#d9b25a" stroke-width="3" stroke-linecap="round"><path d="M22 6v10M32 6v10M42 6v10M22 48v10M32 48v10M42 48v10M6 22h10M6 32h10M6 42h10M48 22h10M48 32h10M48 42h10"/></g><rect x="16" y="16" width="32" height="32" rx="4" fill="#04140b" stroke="#d9b25a" stroke-width="2.5"/><circle cx="32" cy="32" r="6" fill="#7dffb2"/></svg>
+            <span>Copper<em>Trace</em> Labs</span>
+          </a>
+          <p>PCB design, electronics R&amp;D, embedded and IoT product development — from concept to prototype.</p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul><li><a href="about.html">About Us</a></li><li><a href="rnd.html">R&amp;D</a></li><li><a href="products.html">Products</a></li><li><a href="index.html#contact">Contact</a></li></ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul><li><a href="index.html#services">PCB Design</a></li><li><a href="index.html#services">Embedded Firmware</a></li><li><a href="index.html#services">IoT Solutions</a></li><li><a href="index.html#services">Prototyping</a></li></ul>
+        </div>
+        <div>
+          <h4>Reach Us</h4>
+          <ul><li><a href="mailto:info@coppertracelabs.com">info@coppertracelabs.com</a></li><li><a href="tel:+910000000000">+91 00000 00000</a></li><li><p>Your City, India</p></li></ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> CopperTrace Labs. All rights reserved.</span>
+        <span>// designed with copper &amp; code</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research &amp; Development | CopperTrace Labs</title>
+  <meta name="description" content="CopperTrace Labs R&D — PCB design capabilities, embedded and IoT research areas, design process, tools and lab equipment.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="inner">
+  <canvas id="pcb-bg" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="logo" aria-label="CopperTrace Labs home">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><g stroke="#d9b25a" stroke-width="3" stroke-linecap="round"><path d="M22 6v10M32 6v10M42 6v10M22 48v10M32 48v10M42 48v10M6 22h10M6 32h10M6 42h10M48 22h10M48 32h10M48 42h10"/></g><rect x="16" y="16" width="32" height="32" rx="4" fill="#04140b" stroke="#d9b25a" stroke-width="2.5"/><circle cx="32" cy="32" r="6" fill="#7dffb2"/></svg>
+        <span>Copper<em>Trace</em> Labs</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="rnd.html" class="active">R&amp;D</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="index.html#contact" class="btn btn-primary">Get a Quote</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container reveal">
+        <div class="breadcrumb"><a href="index.html">home</a> / r&amp;d</div>
+        <span class="section-tag">Research &amp; Development</span>
+        <h1>Where Ideas Get <span class="text-gold">Wired Up</span></h1>
+        <p class="lead">Our R&amp;D lab explores new sensing, connectivity and power technologies — and turns them into proven building blocks for client projects and our own products.</p>
+      </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section style="padding-top:20px">
+      <div class="container">
+        <div class="reveal">
+          <span class="section-tag">Capabilities</span>
+          <h2>Hardware Design <span class="text-gold">Capabilities</span></h2>
+        </div>
+        <div class="grid grid-3" style="margin-top:40px">
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 12l9 4 9-4M3 17l9 4 9-4"/></svg></div>
+            <h3>Multi-layer PCB</h3>
+            <p>2 to 8 layer stack-ups with controlled impedance and careful plane design.</p>
+            <ul class="ticks"><li>Impedance-controlled routing</li><li>Blind / buried vias</li><li>Flex &amp; rigid-flex</li></ul>
+          </article>
+          <article class="card reveal d1">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M2 12h3l2-6 4 12 3-9 2 3h6"/></svg></div>
+            <h3>High-Speed &amp; RF</h3>
+            <p>USB, Ethernet, DDR and 2.4 GHz / Sub-GHz RF layouts done right.</p>
+            <ul class="ticks"><li>Differential pair tuning</li><li>Antenna matching networks</li><li>EMI/EMC-aware layout</li></ul>
+          </article>
+          <article class="card reveal d2">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div>
+            <h3>Power Electronics</h3>
+            <p>Efficient, safe power stages for battery, solar and mains-powered devices.</p>
+            <ul class="ticks"><li>SMPS &amp; LDO design</li><li>Li-ion charging &amp; BMS</li><li>Isolated AC-DC</li></ul>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></div>
+            <h3>Embedded Systems</h3>
+            <p>Firmware for 8-bit to 32-bit MCUs with clean, maintainable architecture.</p>
+            <ul class="ticks"><li>FreeRTOS / Zephyr</li><li>Secure bootloader &amp; OTA</li><li>Ultra-low-power modes</li></ul>
+          </article>
+          <article class="card reveal d1">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1-.6-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z"/><path d="M12 13v6M9.5 15.5L12 13l2.5 2.5"/></svg></div>
+            <h3>IoT &amp; Cloud</h3>
+            <p>End-to-end connected systems from sensor node to dashboard.</p>
+            <ul class="ticks"><li>MQTT / HTTP / CoAP</li><li>AWS IoT, ThingsBoard</li><li>Mobile app integration</li></ul>
+          </article>
+          <article class="card reveal d2">
+            <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></div>
+            <h3>Sensors &amp; Analog</h3>
+            <p>Precision signal chains for real-world measurements.</p>
+            <ul class="ticks"><li>Low-noise amplifiers &amp; ADCs</li><li>Ultrasonic, current, gas sensing</li><li>Calibration routines</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="panel">
+      <div class="container">
+        <div class="center reveal">
+          <span class="section-tag">Design Flow</span>
+          <h2>Our <span class="text-gold">R&amp;D Process</span></h2>
+          <p class="lead">A structured flow with review gates at each stage keeps projects on time and boards working on the first spin.</p>
+        </div>
+        <div class="process">
+          <div class="step reveal"><div class="node">01</div><h4>Discover</h4><p>Specs, constraints, cost targets</p></div>
+          <div class="step reveal d1"><div class="node">02</div><h4>Architect</h4><p>Block diagram &amp; part selection</p></div>
+          <div class="step reveal d2"><div class="node">03</div><h4>Design</h4><p>Schematic, simulation, layout</p></div>
+          <div class="step reveal d3"><div class="node">04</div><h4>Build</h4><p>Fab, assembly &amp; firmware</p></div>
+          <div class="step reveal d2"><div class="node">05</div><h4>Test</h4><p>Bring-up, stress &amp; EMC pre-scan</p></div>
+          <div class="step reveal d3"><div class="node">06</div><h4>Release</h4><p>Docs, BOM &amp; production files</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research areas -->
+    <section>
+      <div class="container split">
+        <div class="reveal">
+          <span class="section-tag">Current Research</span>
+          <h2>Focus <span class="text-gold">Areas</span></h2>
+          <p>Alongside client work, we invest in research that pushes our own capabilities forward. These are the topics our lab is actively working on:</p>
+          <div class="timeline" style="margin-top:28px">
+            <div class="tl-item"><div class="year">// smart water</div><h3>Non-contact Level Sensing</h3><p>Ultrasonic &amp; capacitive tank-level measurement with self-calibration.</p></div>
+            <div class="tl-item"><div class="year">// energy</div><h3>Low-cost Energy Metering</h3><p>Accurate single-phase metering ICs with cloud analytics.</p></div>
+            <div class="tl-item"><div class="year">// edge ai</div><h3>TinyML on MCUs</h3><p>On-device anomaly detection for motors, pumps and machines.</p></div>
+            <div class="tl-item"><div class="year">// long range</div><h3>LoRaWAN &amp; NB-IoT</h3><p>Multi-year battery life sensor networks for agriculture.</p></div>
+          </div>
+        </div>
+        <div class="board-visual reveal d2" aria-hidden="true" style="aspect-ratio:1">
+          <svg viewBox="0 0 400 400">
+            <rect width="400" height="400" fill="#0f3d22"/>
+            <g stroke="#d9b25a" stroke-opacity=".08">
+              <path d="M0 50H400M0 100H400M0 150H400M0 200H400M0 250H400M0 300H400M0 350H400M50 0V400M100 0V400M150 0V400M200 0V400M250 0V400M300 0V400M350 0V400"/>
+            </g>
+            <!-- oscilloscope screen -->
+            <rect x="40" y="40" width="320" height="200" rx="10" fill="#04140b" stroke="#d9b25a" stroke-opacity=".5"/>
+            <g stroke="#7dffb2" stroke-opacity=".12"><path d="M40 90H360M40 140H360M40 190H360M120 40V240M200 40V240M280 40V240"/></g>
+            <path d="M40 140 Q60 80 80 140 T120 140 T160 140 T200 140 T240 140 T280 140 T320 140 T360 140" fill="none" stroke="#7dffb2" stroke-width="2.5" style="filter:drop-shadow(0 0 4px #7dffb2)">
+              <animate attributeName="d" dur="2s" repeatCount="indefinite"
+                values="M40 140 Q60 80 80 140 T120 140 T160 140 T200 140 T240 140 T280 140 T320 140 T360 140;
+                        M40 140 Q60 200 80 140 T120 140 T160 140 T200 140 T240 140 T280 140 T320 140 T360 140;
+                        M40 140 Q60 80 80 140 T120 140 T160 140 T200 140 T240 140 T280 140 T320 140 T360 140"/>
+            </path>
+            <path d="M40 210 H90 V170 H140 V210 H190 V170 H240 V210 H290 V170 H340 V210 H360" fill="none" stroke="#d9b25a" stroke-width="2"/>
+            <text x="54" y="62" font-family="JetBrains Mono, monospace" font-size="11" fill="#9bb8a5">CH1 2.4GHz  CH2 CLK 8MHz</text>
+            <!-- knobs / board -->
+            <g fill="#04140b" stroke="#d9b25a" stroke-opacity=".6" stroke-width="2">
+              <circle cx="80" cy="310" r="26"/><circle cx="160" cy="310" r="26"/><circle cx="240" cy="310" r="26"/>
+            </g>
+            <g stroke="#d9b25a" stroke-width="3" stroke-linecap="round"><path d="M80 310 L92 294M160 310 L144 296M240 310 L252 324"/></g>
+            <rect x="290" y="285" width="70" height="50" rx="6" fill="#04140b" stroke="#7dffb2" stroke-opacity=".6"/>
+            <text x="325" y="316" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="14" fill="#7dffb2">RUN</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools -->
+    <section class="panel">
+      <div class="container grid grid-2" style="align-items:start">
+        <div class="card reveal">
+          <h3>Design &amp; Software Tools</h3>
+          <p>Industry-standard EDA and firmware toolchains.</p>
+          <div class="tags">
+            <span class="tag">Altium Designer</span><span class="tag">KiCad</span><span class="tag">Eagle / Fusion</span>
+            <span class="tag">LTspice</span><span class="tag">STM32CubeIDE</span><span class="tag">ESP-IDF</span>
+            <span class="tag">nRF Connect SDK</span><span class="tag">PlatformIO</span><span class="tag">FreeRTOS</span>
+            <span class="tag">Zephyr</span><span class="tag">Git</span><span class="tag">Node-RED</span>
+          </div>
+        </div>
+        <div class="card reveal d2">
+          <h3>Lab Equipment</h3>
+          <p>A bench built for bring-up, debugging and validation.</p>
+          <div class="tags">
+            <span class="tag">Digital Oscilloscope</span><span class="tag">Logic Analyzer</span><span class="tag">Spectrum Analyzer</span>
+            <span class="tag">Programmable PSU</span><span class="tag">Electronic Load</span><span class="tag">Reflow Oven</span>
+            <span class="tag">Hot-air Rework</span><span class="tag">Thermal Camera</span><span class="tag">J-Link / ST-Link</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta reveal">
+          <span class="section-tag">Collaborate</span>
+          <h2>Partner With Our R&amp;D Lab</h2>
+          <p class="lead">We collaborate with startups, universities and industry on research-driven product development.</p>
+          <a href="index.html#contact" class="btn btn-primary">Discuss a Project</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom:14px">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><g stroke="#d9b25a" stroke-width="3" stroke-linecap="round"><path d="M22 6v10M32 6v10M42 6v10M22 48v10M32 48v10M42 48v10M6 22h10M6 32h10M6 42h10M48 22h10M48 32h10M48 42h10"/></g><rect x="16" y="16" width="32" height="32" rx="4" fill="#04140b" stroke="#d9b25a" stroke-width="2.5"/><circle cx="32" cy="32" r="6" fill="#7dffb2"/></svg>
+            <span>Copper<em>Trace</em> Labs</span>
+          </a>
+          <p>PCB design, electronics R&amp;D, embedded and IoT product development — from concept to prototype.</p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul><li><a href="about.html">About Us</a></li><li><a href="rnd.html">R&amp;D</a></li><li><a href="products.html">Products</a></li><li><a href="index.html#contact">Contact</a></li></ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul><li><a href="index.html#services">PCB Design</a></li><li><a href="index.html#services">Embedded Firmware</a></li><li><a href="index.html#services">IoT Solutions</a></li><li><a href="index.html#services">Prototyping</a></li></ul>
+        </div>
+        <div>
+          <h4>Reach Us</h4>
+          <ul><li><a href="mailto:info@coppertracelabs.com">info@coppertracelabs.com</a></li><li><a href="tel:+910000000000">+91 00000 00000</a></li><li><p>Your City, India</p></li></ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> CopperTrace Labs. All rights reserved.</span>
+        <span>// designed with copper &amp; code</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

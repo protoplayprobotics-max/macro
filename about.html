@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | CopperTrace Labs</title>
+  <meta name="description" content="About CopperTrace Labs — a team of hardware and firmware engineers building PCBs, embedded systems and IoT products.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="inner">
+  <canvas id="pcb-bg" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="logo" aria-label="CopperTrace Labs home">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><g stroke="#d9b25a" stroke-width="3" stroke-linecap="round"><path d="M22 6v10M32 6v10M42 6v10M22 48v10M32 48v10M42 48v10M6 22h10M6 32h10M6 42h10M48 22h10M48 32h10M48 42h10"/></g><rect x="16" y="16" width="32" height="32" rx="4" fill="#04140b" stroke="#d9b25a" stroke-width="2.5"/><circle cx="32" cy="32" r="6" fill="#7dffb2"/></svg>
+        <span>Copper<em>Trace</em> Labs</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+        <li><a href="rnd.html">R&amp;D</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="index.html#contact" class="btn btn-primary">Get a Quote</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container reveal">
+        <div class="breadcrumb"><a href="index.html">home</a> / about</div>
+        <span class="section-tag">About Us</span>
+        <h1>Engineers Who Think in <span class="text-gold">Copper &amp; Code</span></h1>
+        <p class="lead">CopperTrace Labs is an electronics design house focused on PCB design, embedded systems and IoT. We help startups, OEMs and researchers turn ideas into reliable, manufacturable hardware.</p>
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section style="padding-top:20px">
+      <div class="container split">
+        <div class="board-visual reveal" aria-hidden="true">
+          <svg viewBox="0 0 400 300">
+            <defs>
+              <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#d9b25a" fill-opacity=".15"/></pattern>
+            </defs>
+            <rect width="400" height="300" fill="#0f3d22"/>
+            <rect width="400" height="300" fill="url(#dots)"/>
+            <rect x="10" y="10" width="380" height="280" rx="12" fill="none" stroke="#e4f1e8" stroke-opacity=".2"/>
+            <g fill="none" stroke="#c8823a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".8">
+              <path d="M160 120 H100 L70 90 H30"/><path d="M160 140 H40"/><path d="M160 160 H100 L70 190 V250"/>
+              <path d="M240 120 H300 L330 90 V40"/><path d="M240 140 H360"/><path d="M240 160 H290 L320 190 H370"/>
+              <path d="M180 100 V60 L200 40 H260"/><path d="M220 200 V250 H300"/><path d="M180 200 V240 L160 260 H110"/>
+            </g>
+            <g fill="#d9b25a"><circle cx="30" cy="90" r="6"/><circle cx="40" cy="140" r="6"/><circle cx="70" cy="250" r="6"/><circle cx="330" cy="40" r="6"/><circle cx="360" cy="140" r="6"/><circle cx="370" cy="190" r="6"/><circle cx="260" cy="40" r="6"/><circle cx="300" cy="250" r="6"/><circle cx="110" cy="260" r="6"/></g>
+            <rect x="150" y="95" width="100" height="110" rx="6" fill="#0a0f0c" stroke="#d9b25a" stroke-opacity=".4"/>
+            <text x="200" y="148" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="16" fill="#d9b25a">CTL</text>
+            <text x="200" y="168" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#9bb8a5">EST. 2016</text>
+            <g fill="#2a2a2a" stroke="#d9b25a" stroke-opacity=".5"><rect x="60" y="40" width="30" height="14" rx="2"/><rect x="300" y="215" width="30" height="14" rx="2"/><rect x="40" y="200" width="14" height="30" rx="2"/></g>
+            <circle cx="345" cy="260" r="7" fill="#7dffb2"><animate attributeName="opacity" values="1;.3;1" dur="1.6s" repeatCount="indefinite"/></circle>
+          </svg>
+        </div>
+        <div class="reveal d2">
+          <span class="section-tag">Our Story</span>
+          <h2>Started on a <span class="text-gold">Workbench</span></h2>
+          <p>We began as a small group of electronics engineers who loved solving tricky hardware problems — noisy power rails, RF that wouldn't connect, batteries that died too soon.</p>
+          <p>Today we run a full design lab with schematic and layout, firmware development, SMT prototyping and test benches under one roof. We've delivered boards for agriculture, energy, industrial automation, healthcare and consumer products.</p>
+          <p>What hasn't changed: we care about every trace, every via, and every line of firmware that goes into your product.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission / Vision / Values -->
+    <section class="panel">
+      <div class="container">
+        <div class="center reveal">
+          <span class="section-tag">What Drives Us</span>
+          <h2>Mission, Vision &amp; <span class="text-gold">Values</span></h2>
+        </div>
+        <div class="grid grid-3" style="margin-top:48px">
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></div>
+            <h3>Our Mission</h3>
+            <p>To make professional-grade electronics design accessible to every innovator — from first-time founders to established manufacturers.</p>
+          </article>
+          <article class="card reveal d1">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <h3>Our Vision</h3>
+            <p>To be a trusted R&amp;D partner for smart, connected and energy-efficient products made in India for the world.</p>
+          </article>
+          <article class="card reveal d2">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></div>
+            <h3>Our Values</h3>
+            <ul class="ticks">
+              <li>Quality over shortcuts</li>
+              <li>Transparent communication</li>
+              <li>Respect for client IP</li>
+              <li>Continuous learning</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section>
+      <div class="container split" style="align-items:start">
+        <div class="reveal">
+          <span class="section-tag">Milestones</span>
+          <h2>Our <span class="text-gold">Journey</span></h2>
+          <p class="lead">Every year brought new tools, new capabilities and new challenges solved.</p>
+        </div>
+        <div class="timeline reveal d2">
+          <div class="tl-item"><div class="year">2016</div><h3>The First Board</h3><p>Founded as a PCB layout service for local startups.</p></div>
+          <div class="tl-item"><div class="year">2018</div><h3>Embedded Team</h3><p>Added firmware development for STM32 &amp; AVR platforms.</p></div>
+          <div class="tl-item"><div class="year">2020</div><h3>IoT Division</h3><p>Launched connected-device design with Wi-Fi, BLE and LoRa.</p></div>
+          <div class="tl-item"><div class="year">2023</div><h3>In-house Prototyping Lab</h3><p>Set up SMT rework, reflow and test benches for rapid prototypes.</p></div>
+          <div class="tl-item"><div class="year">2026</div><h3>Own Product Line</h3><p>Began field trials of our own IoT products for water, energy and agriculture.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="panel">
+      <div class="container">
+        <div class="center reveal">
+          <span class="section-tag">The Team</span>
+          <h2>People Behind the <span class="text-gold">Boards</span></h2>
+          <p class="lead">A compact team of specialists across hardware, firmware and cloud.</p>
+        </div>
+        <div class="grid grid-4" style="margin-top:48px">
+          <article class="card member reveal"><div class="avatar">FN</div><h3>Founder Name</h3><div class="role">Founder &amp; Lead Hardware</div><p>15+ years in PCB design and power electronics.</p></article>
+          <article class="card member reveal d1"><div class="avatar">FW</div><h3>Firmware Lead</h3><div class="role">Embedded Systems</div><p>RTOS, low-power design and bootloaders.</p></article>
+          <article class="card member reveal d2"><div class="avatar">RF</div><h3>RF Engineer</h3><div class="role">Wireless &amp; Antennas</div><p>BLE, Wi-Fi, LoRa and antenna matching.</p></article>
+          <article class="card member reveal d3"><div class="avatar">IO</div><h3>IoT Developer</h3><div class="role">Cloud &amp; Apps</div><p>MQTT, dashboards and mobile app integration.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta reveal">
+          <span class="section-tag">Work With Us</span>
+          <h2>Let's Build Something That Works</h2>
+          <p class="lead">Whether it's a single board or a complete product, we'd love to hear about it.</p>
+          <a href="index.html#contact" class="btn btn-primary">Contact Our Team</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom:14px">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><g stroke="#d9b25a" stroke-width="3" stroke-linecap="round"><path d="M22 6v10M32 6v10M42 6v10M22 48v10M32 48v10M42 48v10M6 22h10M6 32h10M6 42h10M48 22h10M48 32h10M48 42h10"/></g><rect x="16" y="16" width="32" height="32" rx="4" fill="#04140b" stroke="#d9b25a" stroke-width="2.5"/><circle cx="32" cy="32" r="6" fill="#7dffb2"/></svg>
+            <span>Copper<em>Trace</em> Labs</span>
+          </a>
+          <p>PCB design, electronics R&amp;D, embedded and IoT product development — from concept to prototype.</p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul><li><a href="about.html">About Us</a></li><li><a href="rnd.html">R&amp;D</a></li><li><a href="products.html">Products</a></li><li><a href="index.html#contact">Contact</a></li></ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul><li><a href="index.html#services">PCB Design</a></li><li><a href="index.html#services">Embedded Firmware</a></li><li><a href="index.html#services">IoT Solutions</a></li><li><a href="index.html#services">Prototyping</a></li></ul>
+        </div>
+        <div>
+          <h4>Reach Us</h4>
+          <ul><li><a href="mailto:info@coppertracelabs.com">info@coppertracelabs.com</a></li><li><a href="tel:+910000000000">+91 00000 00000</a></li><li><p>Your City, India</p></li></ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> CopperTrace Labs. All rights reserved.</span>
+        <span>// designed with copper &amp; code</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
